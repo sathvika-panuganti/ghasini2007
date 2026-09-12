@@ -48,17 +48,11 @@ app.add_middleware(
 # FOLDERS
 # ==========================================
 
-UPLOAD_FOLDER = "uploads"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-RESUME_FOLDER = os.path.join(
-    "outputs",
-    "resumes"
-)
-
-REPORT_FOLDER = os.path.join(
-    "outputs",
-    "reports"
-)
+UPLOAD_FOLDER = os.path.join(BASE_DIR, "uploads")
+RESUME_FOLDER = os.path.join(BASE_DIR, "outputs", "resumes")
+REPORT_FOLDER = os.path.join(BASE_DIR, "outputs", "reports")
 
 
 os.makedirs(
