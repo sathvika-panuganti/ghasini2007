@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Application Agent</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div>
+            <h1>Application Agent</h1>
+
+            <p>
+                Create a job-specific application using your actual experience.
+            </p>
+        </div>
+
+        <div class="status">
+            <span></span>
+            Ready
+        </div>
+
+    </header>
+
+
+    <!-- ================= INPUT PAGE ================= -->
+
+    <main id="inputScreen">
+
+        <section class="intro">
+
+            <h2>Start a New Application</h2>
+
+            <p>
+                Upload your resume and provide the job you are applying for.
+            </p>
+
+        </section>
+
+
+        <section class="form-container">
+
+            <!-- RESUME -->
+
+            <div class="card">
+
+                <h3>1. Resume</h3>
+
+                <p class="description">
+                    Upload your current resume.
+                </p>
+
+                <label for="resumeFile" class="upload-box" id="uploadBox">
+
+                    <div class="upload-symbol">
+                        +
+                    </div>
+
+                    <strong>Choose your resume</strong>
+
+                    <span>PDF or DOCX</span>
+
+                </label>
+
+                <input
+                    type="file"
+                    id="resumeFile"
+                    accept=".pdf,.docx"
+                    hidden
+                >
+
+                <div id="fileStatus" class="file-status"></div>
+
+            </div>
+
+
+            <!-- JOB -->
+
+            <div class="card">
+
+                <h3>2. Job Details</h3>
+
+                <p class="description">
+                    Enter the job posting you want to apply for.
+                </p>
+
+
+                <label for="jobUrl">
+                    Job Posting URL
+                </label>
+
+                <input
+                    type="url"
+                    id="jobUrl"
+                    placeholder="https://company.com/careers/job"
+                >
+
+
+                <label for="targetRole">
+                    Target Role
+                </label>
+
+                <input
+                    type="text"
+                    id="targetRole"
+                    placeholder="Software Engineer Intern"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- NOTICE -->
+
+        <div class="notice">
+
+            <strong>Important</strong>
+
+            <p>
+                Only information found in your resume can be used.
+                The application will not add qualifications you do not have.
+            </p>
+
+        </div>
+
+
+        <button id="startButton" class="start-button">
+            Start Application
+        </button>
+
+    </main>
+
+
+
+    <!-- ================= AGENT PAGE ================= -->
+
+    <main id="agentScreen" class="hidden">
+
+        <div class="page-heading">
+
+            <div>
+
+                <h2>Application Progress</h2>
+
+                <p>
+                    Your application is being prepared.
+                </p>
+
+            </div>
+
+            <div id="executionStatus" class="progress-status">
+                In progress
+            </div>
+
+        </div>
+
+
+        <div class="agent-layout">
+
+
+            <!-- ACTIVITY -->
+
+            <section class="card">
+
+                <div class="section-title">
+
+                    <div>
+                        <h3>Activity</h3>
+
+                        <p>
+                            Current application process
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div id="timeline">
+
+
+                    <div class="timeline-item pending">
+
+                        <div class="number">1</div>
+
+                        <div>
+                            <strong>Resume parsed</strong>
+                            <p>Waiting</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item pending">
+
+                        <div class="number">2</div>
+
+                        <div>
+                            <strong>Candidate information extracted</strong>
+                            <p>Waiting</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item pending">
+
+                        <div class="number">3</div>
+
+                        <div>
+                            <strong>Job posting checked</strong>
+                            <p>Waiting</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item pending">
+
+                        <div class="number">4</div>
+
+                        <div>
+                            <strong>Job requirements identified</strong>
+                            <p>Waiting</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item pending">
+
+                        <div class="number">5</div>
+
+                        <div>
+                            <strong>Relevant experience matched</strong>
+                            <p>Waiting</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item pending">
+
+                        <div class="number">6</div>
+
+                        <div>
+                            <strong>Resume prepared</strong>
+                            <p>Waiting</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item pending">
+
+                        <div class="number">7</div>
+
+                        <div>
+                            <strong>Application evaluated</strong>
+                            <p>Waiting</p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- REPLAN -->
+
+                    <div class="timeline-item replan pending">
+
+                        <div class="number">
+                            ↻
+                        </div>
+
+                        <div>
+
+                            <strong>REPLAN</strong>
+
+                            <p>
+                                Application needs another revision
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item pending">
+
+                        <div class="number">8</div>
+
+                        <div>
+                            <strong>Information checked</strong>
+                            <p>Waiting</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item pending">
+
+                        <div class="number">9</div>
+
+                        <div>
+                            <strong>Final application verified</strong>
+                            <p>Waiting</p>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- DECISION -->
+
+            <section class="card decision-card">
+
+                <h3>Current Decision</h3>
+
+                <p class="description">
+                    What the system is doing now.
+                </p>
+
+
+                <div class="decision-box">
+
+                    <span>DECISION</span>
+
+                    <h2 id="decision">
+                        Waiting
+                    </h2>
+
+
+                    <div class="decision-detail">
+
+                        <strong>Reason</strong>
+
+                        <p id="decisionReason">
+                            The process has not started.
+                        </p>
+
+                    </div>
+
+
+                    <div class="decision-detail">
+
+                        <strong>Action</strong>
+
+                        <p id="decisionAction">
+                            Waiting for application processing.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ================= RESULT PAGE ================= -->
+
+    <main id="resultScreen" class="hidden">
+
+        <div class="page-heading">
+
+            <div>
+
+                <p class="success">
+                    ✓ APPLICATION VERIFIED
+                </p>
+
+                <h2>Application Ready</h2>
+
+                <p>
+                    Your application has completed the checks.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SCORES -->
+
+        <section class="scores">
+
+
+            <div class="score-card">
+
+                <span>ATS Score</span>
+
+                <strong id="atsScore">
+                    --%
+                </strong>
+
+            </div>
+
+
+            <div class="score-card">
+
+                <span>Job Relevance</span>
+
+                <strong id="relevanceScore">
+                    --%
+                </strong>
+
+            </div>
+
+
+            <div class="score-card">
+
+                <span>Evidence Coverage</span>
+
+                <strong id="evidenceScore">
+                    --%
+                </strong>
+
+            </div>
+
+
+            <div class="score-card">
+
+                <span>Factual Check</span>
+
+                <strong id="factCheck">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="score-card">
+
+                <span>Formatting</span>
+
+                <strong id="formatCheck">
+                    --
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FILES -->
+
+        <section class="files-grid">
+
+
+            <div class="card file-card">
+
+                <div class="file-icon">
+                    PDF
+                </div>
+
+                <h3>Tailored Resume</h3>
+
+                <p id="resumeFilename">
+                    Final resume
+                </p>
+
+                <button
+                    id="downloadResume"
+                    class="secondary-button"
+                >
+                    Download PDF
+                </button>
+
+            </div>
+
+
+
+            <div class="card file-card">
+
+                <div class="file-icon">
+                    DOC
+                </div>
+
+                <h3>Evidence & Change Report</h3>
+
+                <p>
+                    See the information used and changes made.
+                </p>
+
+                <button
+                    id="viewReport"
+                    class="secondary-button"
+                >
+                    View Report
+                </button>
+
+                <button
+                    id="downloadReport"
+                    class="link-button"
+                >
+                    Download Report
+                </button>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
