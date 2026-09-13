@@ -6,8 +6,12 @@ Instead of simply generating a resume once, the system evaluates its output, ide
 
 ## 🚀 Live Demo
 
-- **Frontend:** https://ghasini2007.vercel.app/
-- **Backend API:** https://binaryduo.onrender.com/
+The project is deployed with separate frontend and backend services.
+
+* **Frontend:** https://ghasini2007.vercel.app/
+* **Backend API:** https://binaryduo.onrender.com/
+
+You can open the frontend to interact with the application. The frontend communicates with the deployed FastAPI backend for processing and agent execution.
 
 ## 📸 Application Preview
 
@@ -130,7 +134,9 @@ Missing skills, experience, projects, or credentials are not fabricated simply t
 | BeautifulSoup | Job page parsing |
 | Requests | Web requests |
 | ReportLab | PDF generation |
-
-
 ├── requirements.txt
 └── README.md
+
+## 📄 License
+
+This project is for educational and development purposes.
